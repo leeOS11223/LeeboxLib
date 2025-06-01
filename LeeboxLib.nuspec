@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>1.0.2</version>
+    <title>$title$</title>
+    <authors>Lee Armstrong</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <icon>icon.png</icon>
+    <projectUrl>https://leebox.hereticalstudios.co.uk/</projectUrl>
+    <description>A simple library for creating Leebox Games.</description>
+    <releaseNotes>Created Leebox!</releaseNotes>
+    <copyright>$copyright$</copyright>
+    <tags>Game</tags>
+    <readme>docs\README.md</readme>
+  </metadata>
+
+  <files>
+    <file src="icon.png" target="" />
+    <file src="docs/README.md" target="docs\" />
+  </files>
+</package>
