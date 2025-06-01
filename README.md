@@ -2,7 +2,7 @@
 
 This library is for building games for [Leebox](https://leebox.hereticalstudios.co.uk/)!
 
-![NuGet Version](https://img.shields.io/nuget/v/LeeBoxLib.svg)
+[![NuGet Version](https://img.shields.io/nuget/v/LeeBoxLib.svg)](https://www.nuget.org/packages/LeeboxLib)
 
 
 Here is an example game:
