@@ -13,11 +13,11 @@
     <releaseNotes>Created Leebox!</releaseNotes>
     <copyright>$copyright$</copyright>
     <tags>Game</tags>
-    <readme>docs\README.md</readme>
+    <readme>README.md</readme>
   </metadata>
 
   <files>
     <file src="icon.png" target="" />
-    <file src="docs/README.md" target="docs\" />
+    <file src="README.md" target="" />
   </files>
 </package>

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
+using System.Security.Policy;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -170,7 +171,8 @@ namespace LeeboxLib
             if (string.IsNullOrEmpty(SecretKey))
                 throw new InvalidOperationException("Room secret key is not set. Call Setup() first.");
 
-            HttpContent content = new StringContent($"\"{message}\"", Encoding.UTF8, "application/json");
+            string json = JsonSerializer.Serialize(message);
+            HttpContent content = new StringContent(json, Encoding.UTF8, "application/json");
 
             HttpResponseMessage response = await client.PostAsync(LeeboxManager.Address + "/" + ID + "/broadcast", content);
             response.EnsureSuccessStatusCode();
@@ -187,7 +189,8 @@ namespace LeeboxLib
             if (string.IsNullOrEmpty(SecretKey))
                 throw new InvalidOperationException("Room secret key is not set. Call Setup() first.");
 
-            HttpContent content = new StringContent($"\"{url}\"", Encoding.UTF8, "application/json");
+            string json = JsonSerializer.Serialize(url);
+            HttpContent content = new StringContent(json, Encoding.UTF8, "application/json");
 
             HttpResponseMessage response = await client.PostAsync(LeeboxManager.Address + "/" + ID + "/setImage", content);
             response.EnsureSuccessStatusCode();
@@ -205,7 +208,8 @@ namespace LeeboxLib
             if (string.IsNullOrEmpty(SecretKey))
                 throw new InvalidOperationException("Room secret key is not set. Call Setup() first.");
 
-            HttpContent content = new StringContent($"\"{question}\"", Encoding.UTF8, "application/json");
+            string json = JsonSerializer.Serialize(question);
+            HttpContent content = new StringContent(json, Encoding.UTF8, "application/json");
             
             HttpResponseMessage response = await client.PostAsync(LeeboxManager.Address + "/" + ID + "/ask"+ "?timeoutSeconds="+ timeoutSeconds, content);
             response.EnsureSuccessStatusCode();
@@ -291,7 +295,8 @@ namespace LeeboxLib
             if (string.IsNullOrEmpty(SecretKey))
                 throw new InvalidOperationException("Room secret key is not set. Call Setup() first.");
 
-            HttpContent content = new StringContent($"\"{prompt}\"", Encoding.UTF8, "application/json");
+            string json = JsonSerializer.Serialize(prompt);
+            HttpContent content = new StringContent(json, Encoding.UTF8, "application/json");
 
             HttpResponseMessage response = await client.PostAsync(LeeboxManager.Address + "/" + ID + "/draw" + "?timeoutSeconds=" + timeoutSeconds, content);
             response.EnsureSuccessStatusCode();
